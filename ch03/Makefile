@@ -2,7 +2,8 @@ TARGET = arith2
 
 .PHONY: objects
 objects: $(TARGET).s $(TARGET).o $(TARGET).dump
-# objects: $(TARGET).s $(TARGET).o $(TARGET).dump $(TARGET)
+
+.PHONY: arith2
 
 $(TARGET).s: $(TARGET).c
 	gcc -Og -S $<
@@ -13,5 +14,5 @@ $(TARGET).o: $(TARGET).c
 $(TARGET).dump: $(TARGET).o
 	objdump -d $< > $@
 
-# $(TARGET): main.c $(TARGET).c
-# 	gcc -Og -o $@ $^
+arith2: main.c $(TARGET).c
+	gcc -Og -o $@ $^
