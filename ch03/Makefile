@@ -1,4 +1,4 @@
-TARGET = arith2
+TARGET = test
 
 .PHONY: objects
 objects: $(TARGET).s $(TARGET).o $(TARGET).dump
